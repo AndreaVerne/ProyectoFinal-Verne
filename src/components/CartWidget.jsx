@@ -6,9 +6,13 @@ import { CartContext } from "../context/CartContext";
 const CartWidget = () => {
   const { totalItems } = useContext(CartContext);
   return (
-    <div>
-      <MdOutlineShoppingCart className="cart-widget__icon" />
-      <Badge bg="danger">{totalItems()}</Badge>
+    <div className="cart-widget">
+      <MdOutlineShoppingCart className="cart-widget__icon" size={24} />
+      {totalItems() > 0 && (
+        <Badge pill bg="danger" className="cart-widget__badge">
+          {totalItems()}
+        </Badge>
+      )}
     </div>
   );
 };

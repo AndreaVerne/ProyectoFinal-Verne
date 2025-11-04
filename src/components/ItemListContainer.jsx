@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import LoaderComponent from "./LoaderComponent";
 import { db } from "../Firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { Container, Carousel } from "react-bootstrap";
 
 const ItemListContainer = (props) => {
   const [data, setData] = useState([]);
@@ -27,14 +28,63 @@ const ItemListContainer = (props) => {
       .finally(() => setLoading(false));
   }, [categoryId]);
   
+  // Banner solo se muestra en la página principal
+  const renderBanner = () => {
+    if (!categoryId) {
+      return (
+        <div className="promo-banner-container">
+          <Carousel className="promo-banner" indicators={true} controls={true}>
+            <Carousel.Item>
+              <div className="banner-slide banner-slide-1">
+                <div className="banner-content">
+                  <h2>Nueva Colección</h2>
+                  <p>Descubre los productos más recientes para tu rutina de belleza</p>
+                  <button className="banner-btn">Ver Ahora</button>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div className="banner-slide banner-slide-2">
+                <div className="banner-content">
+                  <h2>Ofertas Especiales</h2>
+                  <p>Hasta 30% de descuento en productos seleccionados</p>
+                  <button className="banner-btn">Ver Ofertas</button>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div className="banner-slide banner-slide-3">
+                <div className="banner-content">
+                  <h2>Envío Gratis</h2>
+                  <p>En compras superiores a $5000</p>
+                  <button className="banner-btn">Comprar Ahora</button>
+                </div>
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
-    <div className="container">
-      <h1 className="text-center mt-2 mb-2 tittle-aqua">
-        {props.saludo} <i>{categoryId}</i>
-      </h1>
+    <Container className="py-5">
+      {renderBanner()}
+      <div className="category-header">
+        <h1 className="category-title">
+          {categoryId ? (
+            <>
+              {props.saludo} <span className="highlight">{categoryId}</span>
+            </>
+          ) : (
+            props.saludo
+          )}
+        </h1>
+        {categoryId && <div className="category-divider"></div>}
+      </div>
       {loading ? <LoaderComponent /> : <ItemList data={data} />}
-    </div>
+    </Container>
   );
 };
 export default ItemListContainer;

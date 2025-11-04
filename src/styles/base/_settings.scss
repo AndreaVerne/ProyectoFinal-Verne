@@ -1,7 +1,16 @@
 $primary: #f1b0d5;
 $secondary: #9386ad;
 $primary-dark: #ff7abc;
+$light-bg: #fdf6fa;
+$dark-text: #333333;
+$light-text: #ffffff;
+$accent: #ff5fa2;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+$box-shadow-pink: 0 4px 12px rgba(255, 123, 172, 0.2);
 
 body {
-font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  background-color: $light-bg;
+  color: $dark-text;
 }

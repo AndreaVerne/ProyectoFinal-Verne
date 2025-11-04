@@ -10,6 +10,9 @@ import ErrorPage from "./components/ErrorPage";
 import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
 import CheckoutHook from "./components/CheckoutHook";
+import Contact from "./components/Contact";
+
+
 
 function App() {
   return (
@@ -20,16 +23,17 @@ function App() {
           <Route
             path="/"
             element={
-              <ItemListContainer saludo="Bienvenidos a Kiri Makeup! 💄" />
+              <ItemListContainer saludo="Nuestros productos" />
             }
           />
           <Route
             path="/category/:categoryId"
-            element={<ItemListContainer saludo="Estas en la categoria: " />}
+            element={<ItemListContainer saludo="Estás en la categoría: " />}
           />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
           <Route path="/checkout" element={<CheckoutHook />} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path="*"
             element={<ErrorPage message="Lo siento, esa página no existe!" />}

@@ -1,22 +1,23 @@
 import React from "react";
 import Item from "./Item";
+import { Row, Col } from "react-bootstrap";
 
 const ItemList = ({ data }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        flexWrap: "wrap",
-      }}
-    >
+    <div className="item-list">
       {data.length === 0 && (
-        <p className="mt-2">No hay productos disponibles</p>
+        <div className="no-products">
+          <p>No hay productos disponibles</p>
+        </div>
       )}
-      {data.map((prod) => (
-        <Item key={prod.id} prod={prod} />
-      ))}
+      
+      <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+        {data.map((prod) => (
+          <Col key={prod.id}>
+            <Item prod={prod} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };

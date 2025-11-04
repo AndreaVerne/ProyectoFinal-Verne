@@ -1,28 +1,102 @@
 @use '../base/settings';
 
-.bg-body-tertiary {
-    background-color: settings.$primary!important;
-    color: white!important;
+.navbar-custom {
+  background-color: white !important;
+  box-shadow: settings.$box-shadow;
+  
+  .navbar-brand {
+    .brand-image {
+      width: auto;
+      height: 40px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .nav-links {
+    .nav-item {
+      font-weight: 500;
+      color: settings.$dark-text !important;
+      position: relative;
+      transition: color 0.3s ease;
+      
+      &:hover, &.active {
+        color: settings.$primary-dark !important;
+        
+        &::after {
+          width: 100%;
+        }
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: settings.$primary-dark;
+        transition: width 0.3s ease;
+      }
+    }
+  }
+  
+  .dropdown-item-custom {
+    color: settings.$dark-text;
+    transition: all 0.2s ease;
     
-    .navbar-brand,
-    .nav-link,
-    .navbar-nav .nav-link,
-    .navbar-nav .nav-link.active,
-    .dropdown-toggle {
-        color: white!important;
+    &:hover {
+      background-color: settings.$light-bg;
+      color: settings.$primary-dark;
+      transform: translateX(5px);
+    }
+    
+    &.special-offer {
+      color: settings.$accent;
+      font-weight: 600;
+    }
+  }
+  
+  .cart-icon-container {
+    position: relative;
+    padding: 8px;
+    
+    .cart-widget {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &__icon {
+        color: settings.$primary-dark;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      
+      &__badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.7rem;
+        transform: translate(25%, -25%);
+      }
+    }
+  }
+  
+  .navbar-toggler {
+    border-color: transparent;
+    
+    &:focus {
+      box-shadow: none;
     }
     
     .navbar-toggler-icon {
-        filter: invert(1);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28241, 176, 213, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-
-    .dropdown-item:hover {
-        background-color: settings.$primary;
-        color: white;
-
-    }
-    .img{
-        width: 50px;
-        height: 50px;
-    }
+  }
 }

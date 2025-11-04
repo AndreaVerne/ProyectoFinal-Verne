@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import { getOneProduct } from "../mock/AsyncMock";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import LoaderComponent from "./LoaderComponent";
 import { db } from "../Firebase";
@@ -30,14 +29,6 @@ const ItemDetailContainer = () => {
     }).catch((error) => console.log(error))
     .finally(() => setLoading(false));
   }, []); 
-  //MOCK
-  // useEffect(() => {
-  //   setLoading(true);
-  //   getOneProduct(id)
-  //     .then((res) => setDetail(res))
-  //     .catch((error) => console.log(error))
-  //     .finally(() => setLoading(false));
-  // }, []);
 
   return (
     <>

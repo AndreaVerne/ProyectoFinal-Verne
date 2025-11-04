@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: settings.$light-bg;
+  min-height: 100vh;
+}
+
 .btn {
   background-color: settings.$primary;
   color: #fff;
@@ -14,16 +19,23 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-}
-
-.btn:hover {
-  background-color: settings.$secondary;
+  border-radius: settings.$border-radius;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+  &:hover {
+    background-color: settings.$primary-dark;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -48,6 +60,64 @@
 }
 
 .center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+// Contenedor principal
+.main-container {
+  min-height: calc(100vh - 76px);
+  padding-bottom: 2rem;
+}
+
+// Estilos para tarjetas y secciones
+.section-container {
+  background-color: white;
+  border-radius: settings.$border-radius;
+  box-shadow: settings.$box-shadow;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Estilos para títulos
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: settings.$dark-text;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: settings.$primary-dark;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: settings.$primary;
+    border-radius: 2px;
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;
