@@ -1,10 +1,10 @@
 @use '../base/settings';
 
 form#contact-form {
-    padding: 1rem 15rem;
-    display: flex;
-    flex-direction: column;
-    
+  padding: 1rem 25rem;
+  display: flex;
+  flex-direction: column;
+
 
   .form-control:focus {
     border-color: settings.$primary-dark !important;
