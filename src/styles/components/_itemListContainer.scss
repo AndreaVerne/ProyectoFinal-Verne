@@ -3,18 +3,18 @@
 .category-header {
   margin-bottom: 2rem;
   text-align: center;
-  
+
   .category-title {
     font-size: 2rem;
     font-weight: 700;
     color: settings.$dark-text;
     margin-bottom: 1rem;
-    
+
     .highlight {
       color: settings.$primary-dark;
       font-style: normal;
       position: relative;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -27,7 +27,7 @@
       }
     }
   }
-  
+
   .category-divider {
     width: 80px;
     height: 4px;
@@ -40,7 +40,7 @@
 .no-products {
   text-align: center;
   padding: 3rem 0;
-  
+
   p {
     font-size: 1.2rem;
     color: #888;
@@ -51,12 +51,12 @@
   margin-bottom: 3rem;
 }
 
-.container{
-    margin-top: 1rem;
+.container {
+  margin-top: 1rem;
 }
 
-h1{
-    color: settings.$primary;
+h1 {
+  color: settings.$primary;
 }
 
 // Estilos para el banner promocional
@@ -69,7 +69,7 @@ h1{
   overflow: hidden;
   box-shadow: settings.$box-shadow;
   margin-bottom: 2rem;
-  
+
   .carousel-indicators {
     button {
       width: 10px;
@@ -77,21 +77,22 @@ h1{
       border-radius: 50%;
       background-color: rgba(255, 255, 255, 0.5);
       margin: 0 5px;
-      
+
       &.active {
         background-color: white;
       }
     }
   }
-  
+
   .carousel-control-prev,
   .carousel-control-next {
     width: 10%;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  
+
   &:hover {
+
     .carousel-control-prev,
     .carousel-control-next {
       opacity: 0.8;
@@ -107,7 +108,7 @@ h1{
   display: flex;
   align-items: center;
   padding: 2rem;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -117,17 +118,17 @@ h1{
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
   }
-  
+
   &-1 {
-    background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-image: url('https://i.pinimg.com/originals/1c/7a/6a/1c7a6abea3f3031dd345aaaeb5f49832.jpg');
   }
-  
+
   &-2 {
-    background-image: url('https://images.unsplash.com/photo-1583241475880-083f84372725?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-image: url('https://preview.redd.it/idol-beauty-hello-kitty-collection-v0-wgwnrkmpt2va1.jpg?width=1080&crop=smart&auto=webp&s=b111b7ab69442fb8ee402a32e2669f82ebc43a0b');
   }
-  
+
   &-3 {
-    background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-image: url('https://i.pinimg.com/736x/53/a3/a9/53a3a9351f24ea808e3128f550afd26b.jpg');
   }
 }
 
@@ -137,13 +138,13 @@ h1{
   max-width: 600px;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  
+
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
   }
-  
+
   p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
@@ -160,13 +161,13 @@ h1{
   font-weight: 600;
   border-radius: settings.$border-radius;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background-color: settings.$primary-dark;
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  
+
   &:active {
     transform: translateY(-1px);
   }
